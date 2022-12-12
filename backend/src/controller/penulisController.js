@@ -23,3 +23,23 @@ function getAll(req,res, callback){
     })
 }
 module.exports.getAll = getAll;
+
+function delete_penulis(req,res, callback){
+    let id = req.params.id;
+    pool.getConnection(function(err,connection){
+        if (err) return callback(err);
+        connection.query(
+            'delete from penulis where id_penulis = ?;',[id],
+            function(error,results){
+                if(error) return callback(error);
+                return callback({
+                    success: true,
+                    message : 'berhasil mengambil data',
+                    data: results
+                });
+            }
+        );
+        connection.release();
+    })
+}
+module.exports.delete_penulis = delete_penulis;

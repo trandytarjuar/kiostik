@@ -5,5 +5,10 @@ var router = function (app){
                    res.json(result);
               });
      });
+    app.delete('/penulis/:id', function(req, res){
+        penulis.delete_penulis(req, res, function(result){
+                   res.json(result);
+              });
+     });
 }
 module.exports = router
