@@ -10,5 +10,20 @@ var router = function (app){
                    res.json(result);
               });
      });
+    app.get('/penulis/:id', function(req, res){
+        penulis.getById(req, res, function(result){
+                   res.json(result);
+              });
+     });
+    app.post('/penulis', function(req, res){
+        penulis.addPenulis(req, res, function(result){
+                   res.json(result);
+              });
+     });
+    app.put('/penulis/:id', function(req, res){
+        penulis.editPenulis(req, res, function(result){
+                   res.json(result);
+              });
+     });
 }
 module.exports = router

@@ -6,6 +6,7 @@ var router = function (app) {
 			   res.json(result);
 		  });
  });
+
  app.get('/buku/:id', function(req, res){
     buku.getById(req, res, function(result){
 			   res.json(result);
@@ -23,6 +24,12 @@ var router = function (app) {
  });
  app.put('/buku/:id', function(req, res){
     buku.editBuku(req, res, function(result){
+			   res.json(result);
+		  });
+ });
+ 
+ app.get('/buku/penulis', function(req, res){
+    buku.getpenulis(req, res, function(result){
 			   res.json(result);
 		  });
  });

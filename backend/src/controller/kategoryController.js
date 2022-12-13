@@ -9,29 +9,28 @@ pool.on("error", (err) => {
 function getAll(req, res, callback) {
   pool.getConnection(function (err, connection) {
     if (err) return callback(err);
-    connection.query("select * from buku;", function (error, results) {
-      if (error) return callback(error);
-      return callback({
-        success: true,
-        message: "berhasil mengambil data",
-        data: results,
-      });
-    });
+    connection.query(
+      "select * from kategori  ;",
+      function (error, results) {
+        if (error) return callback(error);
+        return callback({
+          success: true,
+          message: "berhasil mengambil data",
+          data: results,
+        });
+      }
+    );
     connection.release();
   });
 }
 module.exports.getAll = getAll;
-
-
-
-
 
 function getById(req, res, callback) {
   let id = req.params.id;
   pool.getConnection(function (err, connection) {
     if (err) return callback(err);
     connection.query(
-      "select * from buku where id_buku = ?;",
+      "select * from kategori  where id_kategori = ?;",
       [id],
       function (error, results) {
         if (error) return callback(error);
@@ -47,16 +46,12 @@ function getById(req, res, callback) {
 }
 module.exports.getById = getById;
 
-
-
-
-
-function deletebuku(req, res, callback) {
+function deletekategori(req, res, callback) {
   let id = req.params.id;
   pool.getConnection(function (err, connection) {
     if (err) return callback(err);
     connection.query(
-      "delete from buku where id_buku = ?;",
+      "delete from kategori where id_kategori = ?;",
       [id],
       function (error, results) {
         if (error) return callback(error);
@@ -70,26 +65,21 @@ function deletebuku(req, res, callback) {
     connection.release();
   });
 }
-module.exports.deletebuku = deletebuku;
+module.exports.deletekategori = deletekategori;
 
-function addBuku(req, res, callback) {
+function addKategori(req, res, callback) {
   // let id = req.params.id;
   let data = {
-    id_penulis: req.body.id_penulis,
-    id_kategori: req.body.id_kategori,
-    judul: req.body.judul,
-    penerbit: req.body.penerbit,
-    tahun_penerbit: req.body.tahun_penerbit,
+    deskripsi: req.body.deskripsi,
     create_at: req.body.create_at,
     create_date: req.body.create_date,
     update_at: req.body.update_at,
     update_date: req.body.update_date,
-    stock: req.body.stock,
   };
   pool.getConnection(function (err, connection) {
     if (err) return callback(err);
     connection.query(
-      "insert into buku SET  ?;",
+      "insert into kategori SET  ?;",
       [data],
       function (error, results) {
         if (error) return callback(error);
@@ -103,32 +93,4 @@ function addBuku(req, res, callback) {
     connection.release();
   });
 }
-module.exports.addBuku = addBuku;
-
-function editBuku(req, res, callback) {
-  let id = req.params.id;
-  console.log(id);
-  let data = {
-    judul: req.body.judul,
-    penerbit: req.body.penerbit,
-    tahun_penerbit: req.body.tahun_penerbit,
-    stock: req.body.stock,
-  };
-  pool.getConnection(function (err, connection) {
-    if (err) return callback(err);
-    connection.query(
-      "update buku SET  ? where id_buku =? ;",
-      [data, id],
-      function (error, results) {
-        if (error) return callback(error);
-        return callback({
-          success: true,
-          message: "berhasil mengambil data",
-          data: results,
-        });
-      }
-    );
-    connection.release();
-  });
-}
-module.exports.editBuku = editBuku;
+module.exports.addKategori = addKategori;
