@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "50aaf85d-b9ce-477e-ae8a-8f089820df5f",
+		"name": "kiostik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13999275"
+	},
+	"item": [
+		{
+			"name": "buku",
+			"item": [
+				{
+					"name": "getall",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "judul",
+									"value": "tes1",
+									"type": "text"
+								},
+								{
+									"key": "penerbit",
+									"value": "tes",
+									"type": "text"
+								},
+								{
+									"key": "tahun_penerbit",
+									"value": "2020",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/buku",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buku/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "judul",
+									"value": "tes",
+									"type": "text"
+								},
+								{
+									"key": "penerbit",
+									"value": "tes1",
+									"type": "text"
+								},
+								{
+									"key": "tahun_penerbit",
+									"value": "2011",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/buku/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buku",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buku/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "berdasarkan judul buku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/buku/judul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buku",
+								"judul"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "penulis",
+			"item": [
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/penulis/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penulis",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/penulis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penulis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_penulis",
+									"value": "tmt",
+									"type": "text"
+								},
+								{
+									"key": "id_buku",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "create_at",
+									"value": "trandy",
+									"type": "text"
+								},
+								{
+									"key": "created_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "update_at",
+									"value": "trandy",
+									"type": "text"
+								},
+								{
+									"key": "update_date",
+									"value": "2022/12/13",
+									"type": "text"
+								},
+								{
+									"key": "id_penulis",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/penulis/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"penulis",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "kategory",
+			"item": [
+				{
+					"name": "getall",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getByid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ketegori/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ketegori",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "deskripsi\t",
+									"value": "remaja",
+									"type": "text"
+								},
+								{
+									"key": "create_at",
+									"value": "trandy",
+									"type": "text"
+								},
+								{
+									"key": "create_date",
+									"value": "2022-12-12",
+									"type": "text"
+								},
+								{
+									"key": "update_at",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "update_date",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/ketegori",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ketegori"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "byjudul",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "bypenulis",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "bykategori",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
