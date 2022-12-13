@@ -37,6 +37,15 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->group('penulis', function ($routes) {
+    $routes->get('/', 'penulisController::index');
+    $routes->get('create', 'penulisController::create');
+    $routes->delete('delete/(:any)', 'penulisController::delete/$1');
+    $routes->post('save', 'penulisController::save');
+    $routes->get('edit/(:any)', 'penulisController::edit/$1');
+    $routes->put('update', 'penulisController::update');
+  });
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
