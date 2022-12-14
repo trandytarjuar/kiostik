@@ -78,7 +78,6 @@ class penulisController extends BaseController
         // var_dump($request); die;
 
         $penulis = $request->getPost('penulis');
-        // var_dump($penulis); die;
         $id = $request->getPost('id');
         // var_dump($id); die;
 
@@ -87,7 +86,9 @@ class penulisController extends BaseController
             "nama_penulis" => $penulis,
 
         ];
+        // var_dump($body); die;
         $url = curlHelper(getenv('API_URL') . 'penulis/'.$id, 'PUT');
+        var_dump($url); die;
         $headerData = array(
             'Content-Type: application/x-www-form-urlencoded',
             'Accept' => 'application/json',

@@ -48,12 +48,12 @@
                                     
 
 
-                                    <form   enctype="multipart/form-data" >
+                                    <form  enctype="multipart/form-data" >
                                         <?php foreach($penulis as $row):?>
                                     <input type="text" id="id_penulis" value="<?= $row->id_penulis ?>" hidden>
                                         <div class="mb-3">
                                             <label class="form-label" for="validationCustom01">Nama Penulis</label>
-                                            <input type="text" class="form-control" id="nama_penulis" value="<?=$row->nama_penulis?>">
+                                            <input type="text" name="penulis" class="form-control" id="nama_penulis" value="<?=$row->nama_penulis?>">
                                             
                                         </div>
                                         

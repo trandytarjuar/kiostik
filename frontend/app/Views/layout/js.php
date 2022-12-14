@@ -51,13 +51,14 @@
         data.append("penulis",penulis)
         data.append("id",id)
         $.ajax({
-            type:"PUT",
+            type:"POST",
             url : `${base_url}/penulis/update`,
             cache: false,
             contentType: false,
             processData: false,
             data: data,
             success: function(res){
+                console.log(res)
                 // setInterval(function() {
                 //     location.href = `${base_url}/penulis/`;
                 // }, 2000);
